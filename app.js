@@ -125,7 +125,7 @@ app.get(
     console.log(token1);
 
     res.redirect(
-      `https://frontend-ce0qfkkdd-chandrashekharsainis-projects.vercel.app/?token=${encodeURIComponent(
+      `https://frontend-five-gamma-26.vercel.app?token=${encodeURIComponent(
         JSON.stringify(token)
       )}`
     );
