@@ -40,7 +40,7 @@ const SignupMailer = (email, randomName, randomPassword) => {
             <td style="padding: 8px; border: 1px solid #ddd;"><strong>${randomPassword}</strong></td>
           </tr>
         </table>
-        <p>Please <a href="https://vimtrim.onrender.com/create-account/sign-in" style="color: #007bff; text-decoration: none;">log in</a> to your account and change your password as soon as possible.</p>
+        <p>Please <a href="https://frontend-five-gamma-26.vercel.app/create-account/sign-in" style="color: #007bff; text-decoration: none;">log in</a> to your account and change your password as soon as possible.</p>
         <p>Thanks,</p>
         <p>The <strong>Your App Name</strong> Team</p>
       </div>

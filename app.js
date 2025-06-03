@@ -103,12 +103,12 @@ app.get(
 app.get(
   "/auth/google/callback",
   GoogleAuthPassport.authenticate("google", {
-    failureRedirect: "http://localhost:5173/account-create/sign-in",
+    failureRedirect: "https://frontend-five-gamma-26.vercel.app/account-create/sign-in",
     session: false,
   }),
   function (req, res) {
     if (!req.user)
-      return res.redirect("http://localhost:5173/account-create/sign-in");
+      return res.redirect("https://frontend-five-gamma-26.vercel.app/account-create/sign-in");
 
     const token = jwt.sign({ user: req.user }, process.env.JWT_SECRET, {
       expiresIn: "1h",
@@ -144,12 +144,12 @@ app.get(
 app.get(
   "/auth/github/callback",
   GithubAuthPassport.authenticate("github", {
-    failureRedirect: "http://localhost:5173/account-create/sign-in",
+    failureRedirect: "https://frontend-five-gamma-26.vercel.app/account-create/sign-in",
     session: false,
   }),
   function (req, res) {
     if (!req.user)
-      return res.redirect("http://localhost:5173/account-create/sign-in");
+      return res.redirect("https://frontend-five-gamma-26.vercel.app/account-create/sign-in");
     const token = jwt.sign({ user: req.user }, process.env.JWT_SECRET, {
       expiresIn: "1h",
     });
@@ -159,13 +159,14 @@ app.get(
 
     res.cookie("access_token", token1, {
       httpOnly: true,
-      sameSite: true,
-      secure: false,
+      sameSite: "None",
+      path:"/",
+      secure: true,
     });
     console.log("GitHub", token1);
 
     res.redirect(
-      `http://localhost:5173?token=${encodeURIComponent(JSON.stringify(token))}`
+      `https://frontend-five-gamma-26.vercel.app?token=${encodeURIComponent(JSON.stringify(token))}`
     );
   }
 );
