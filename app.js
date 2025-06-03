@@ -119,8 +119,9 @@ app.get(
 
     res.cookie("access_token", token1, {
       httpOnly: true,
-      sameSite: true,
-      secure: false,
+      path: "/",
+      sameSite: "None",
+      secure: true,
     });
     console.log(token1);
 
