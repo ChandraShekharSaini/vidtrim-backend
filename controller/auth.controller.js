@@ -109,6 +109,8 @@ export const getSignOut = (req, res, next) => {
 export const deleteUser = async (req, res, next) => {
   console.log("----------User Delete Start---------");
 
+  
+
   if (req.user.id === req.params.id) {
     try {
       const { id } = req.params;
