@@ -39,6 +39,8 @@ export const postSignIn = async (req, res, next) => {
         httpOnly: true,
         maxAge: 5 * 60 * 60 * 1000,
         path: "/",
+        sameSite: "None",
+        secure:true
       })
       .status(200)
       .json({
